@@ -28,7 +28,7 @@ body, html {
 }
 
 .logo {
-  height: 60px; /* Slightly smaller for mobile */
+  height: 90px; /* Slightly smaller for mobile */
   width: auto;
   margin-bottom: 15px;
 }
