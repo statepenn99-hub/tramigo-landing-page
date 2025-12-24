@@ -9,8 +9,9 @@ function App() {
         <img src="/tramigo-logo.png" alt="Tramigo.AI Logo" className="logo" />
       </header>
 
-      {/* 2. Main Mission Section */}
       <main className="main-content">
+
+        {/* 2. Mission Section */}
         <section className="mission-box">
           <h2>Our Mission</h2>
           <p className="mission-text">
@@ -20,12 +21,10 @@ function App() {
             meaningful jobs but master their roles with confidence and excellence.
           </p>
         </section>
-      </main>
 
-      {/* 3. Footer & Contact */}
-      <footer className="footer">
+        {/* 3. Contact US Section */}
         <section className="contact-box">
-          <h3>Contact Us</h3>
+          <h2>Contact Us</h2>
           <div className="contact-links">
             <a href="mailto:contact@tramigo.ai">Email Us</a>
             <span>•</span>
@@ -34,9 +33,13 @@ function App() {
             <a href="https://instagram.com/tramigo" target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </section>
+
+      </main>
+
+      {/* 4. Footer */}
+      <footer className="footer">
         <p className="copyright">© 2025 Tramigo.AI. All rights reserved.</p>
       </footer>
-
     </div>
   )
 }

@@ -1,68 +1,143 @@
-/* Reset basic margins */
+/* 1. Global Reset & Basics */
 body, html {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: #f9f9f9;
   color: #333;
+  height: 100%; /* Ensure full height */
 }
 
-/* The main container acts like a frame */
+/* 2. Main Container (Mobile First Approach) */
 .landing-container {
-  max-width: 800px;
-  margin: 0 auto; /* Centers the container */
-  padding: 40px 20px;
-  text-align: center;
-  min-height: 100vh; /* Takes up full height of screen */
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
+  /* Default Padding for Mobile */
+  padding: 20px; 
 }
 
-/* Logo styling */
+/* 3. Header Styling */
+.header {
+  margin-top: 20px;
+  text-align: center;
+}
+
 .logo {
-  height: 320px;
+  height: 60px; /* Slightly smaller for mobile */
   width: auto;
+  margin-bottom: 15px;
 }
 
-/* Mission Box */
+/* 4. Mission Box Styling */
+.main-content {
+  flex: 1; /* Pushes footer down */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers box vertically */
+  justify-content: center;
+  wdith: 100%;
+  gap: 40px;
+}
+
 .mission-box {
   background: #99aa8c;
-  padding: 20px;
+  padding: 30px 20px; /* Compact padding for mobile */
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Soft shadow */
-  margin: 10px 0;
-  text-align: left;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mission-box h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
 }
 
 .mission-text {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  color: #555;
+  color: #333;
 }
 
-/* Footer & Links */
 .contact-box {
   background: #99aa8c;
-  padding: 20px;
+  padding: 30px 20px; /* Compact padding for mobile */
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Soft shadow */
-  margin: 10px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-box h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Adds space between items */
+  flex-wrap: wrap; /* Allows links to stack on tiny screens */
 }
 
 .contact-links a {
-  color: #0070f3; /* Professional Blue */
+  color: #0070f3;
   text-decoration: none;
   font-weight: 600;
-  margin: 0 10px;
 }
 
-.contact-links a:hover {
-  text-decoration: underline;
+.contact-links span {
+  color: #ccc;
 }
+
+/* 5. Footer Styling */
+.footer {
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+
 
 .copyright {
   margin-top: 20px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #888;
+}
+
+/* =========================================
+   6. DESKTOP TWEAKS (Screens wider than 768px) 
+   ========================================= */
+@media (min-width: 768px) {
+  .landing-container {
+    padding: 40px; /* More breathing room */
+  }
+
+  .logo {
+    height: 160px; /* Larger logo */
+  }
+
+  .mission-box {
+    padding: 60px; /* Big spacious box */
+  }
+
+  .mission-text {
+    font-size: 1.35rem; /* Larger text for reading ease */
+  }
+
+  .contact-box {
+    padding: 60px; /* Big spacious box */
+  }
+
+  .contact-text {
+    font-size: 1.35rem; /* Larger text for reading ease */
+  }
 }
