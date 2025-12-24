@@ -22,6 +22,17 @@ function App() {
           </p>
         </section>
 
+        {/* 3. NEW: Infographic Section */}
+        {/* We use a plain container so the image can be full width */}
+        <section className="infographic-container">
+           <h2 className="visually-hidden">Employment Stats</h2>
+           <img 
+             src="/infographic.png" 
+             alt="Infographic explaining employment stats for IIDs" 
+             className="infographic-image"
+           />
+        </section>
+
         {/* 3. Contact US Section */}
         <section className="contact-box">
           <h2>Contact Us</h2>
