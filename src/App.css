@@ -1,14 +1,70 @@
-/* 1. Global Reset & Basics */
+/* Global Reset & Basics */
 body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #f9f9f9; 
+  background-color: white; 
   color: 333;
 }
 
-/* 2. Main Container (Mobile First Approach) */
+/* Navbar styles */
+.navbar {
+  /* Fix it to the top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  /* Ensure it sits on top of everything else */
+  z-index: 1000;
+  width: 100%; 
+  
+  /* Visual Styling */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px; /* Increased side padding for better look */
+  background-color: rgba(255, 255, 255, 0.95); /* Slight transparency */
+  backdrop-filter: blur(10px); /* The modern "frosted glass" effect */
+  border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.nav-logo {
+  height: 40px; /* Small thumbnail size */
+  width: auto;
+}
+
+.nav-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.signup-btn {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.signup-btn:hover {
+  background-color: #005bb5;
+}
+
+/* Main Container (Mobile First Approach) */
 .landing-container {
   max-width: 900px;
   margin: 0 auto;
@@ -16,12 +72,22 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
   
-  /* Default Padding for Mobile */
-  padding: 20px; 
+  /* Push content down so it's not hidden behind the fixed navbar */
+  /* 70px (approx navbar height) + 40px (desired spacing) */
+  padding-top: 110px; 
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-/* 3. Header Styling */
+/* Ensure app wrapper takes full height */
+.app-wrapper {
+  min-height: 100%;
+}
+
+/* Header Styling */
 .header {
   margin-top: 20px;
   text-align: center;
@@ -33,10 +99,9 @@ body, html {
   width: auto;
   margin-bottom: 15px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* 4. Box Styling */
+/* Box Styling */
 .main-content {
   flex: 1; /* Pushes footer down */
   display: flex;
@@ -131,7 +196,7 @@ body, html {
   color: #ccc;
 }
 
-/* 5. Footer Styling */
+/* Footer Styling */
 .footer {
   text-align: center;
   border-top: 1px solid #eaeaea;
@@ -145,11 +210,75 @@ body, html {
   color: #888;
 }
 
+/* ========================
+   LOGIN PAGE STYLES
+   ======================== */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box; /* Fixes padding width issues */
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #666;
+  margin-top: 20px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /* =========================================
-   6. DESKTOP TWEAKS (Screens wider than 768px) 
+   DESKTOP TWEAKS (Screens wider than 768px) 
    ========================================= */
 @media (min-width: 768px) {
-  .landing-container {
+  .landing-container, .login-container {
     padding: 40px; /* More breathing room */
   }
 
@@ -157,19 +286,12 @@ body, html {
     height: 160px; /* Larger logo */
   }
 
-  .mission-box {
+  .mission-box, .contact-box, .login-box {
     padding: 60px; /* Big spacious box */
   }
 
-  .mission-text {
+  .mission-text, .contact-text {
     font-size: 1.35rem; /* Larger text for reading ease */
   }
 
-  .contact-box {
-    padding: 60px; /* Big spacious box */
-  }
-
-  .contact-text {
-    font-size: 1.35rem; /* Larger text for reading ease */
-  }
 }

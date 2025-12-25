@@ -1,17 +1,55 @@
+import { useState } from 'react';
+import Login from './Login';
 import './App.css'
 
 function App() {
+  // State to track current page: 'landing' or 'login'
+  const [currentPage, setCurrentPage] = useState('landing');
+
+  return (
+    <div className="app-wrapper">
+      
+      {/* PERMANENT NAVBAR (Always Visible) */}
+      <nav className="navbar">
+        <div 
+          className="nav-brand" 
+          onClick={() => setCurrentPage('landing')}
+        >
+          <img src="/tramigo-navbar.png" alt="Logo" className="nav-logo" />
+          <span className="nav-title">My Org</span>
+        </div>
+        
+        {/* Only show Sign Up button if we are NOT on the login page */}
+        {currentPage !== 'login' && (
+          <button 
+            className="signup-btn" 
+            onClick={() => setCurrentPage('login')}
+          >
+            Sign Up
+          </button>
+        )}
+      </nav>
+
+      {/* DYNAMIC CONTENT AREA */}
+      {currentPage === 'landing' ? (
+        <LandingPage />
+      ) : (
+        <Login onBack={() => setCurrentPage('landing')} />
+      )}
+    </div>
+  )
+}
+
+function LandingPage() {
   return (
     <div className="landing-container">
-      
-      {/* 1. Header & Logo */}
+      {/* Header & Logo */}
       <header className="header">
         <img src="/tramigo-logo.png" alt="Tramigo.AI Logo" className="logo" />
       </header>
 
       <main className="main-content">
-
-        {/* 2. Mission Section */}
+        {/* Mission Section */}
         <section className="mission-box">
           <h2>Our Mission</h2>
           <p className="mission-text">
@@ -22,7 +60,7 @@ function App() {
           </p>
         </section>
 
-        {/* 3. NEW: Infographic Section */}
+        {/* Infographic Section */}
         {/* We use a plain container so the image can be full width */}
         <section className="infographic-container">
            <h2 className="visually-hidden">Employment Stats</h2>
@@ -33,7 +71,7 @@ function App() {
            />
         </section>
 
-        {/* 3. Contact US Section */}
+        {/* Contact US Section */}
         <section className="contact-box">
           <h2>Contact Us</h2>
           <div className="contact-links">
@@ -44,15 +82,14 @@ function App() {
             <a href="https://instagram.com/tramigo" target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </section>
-
       </main>
 
-      {/* 4. Footer */}
+      {/* Footer */}
       <footer className="footer">
         <p className="copyright">© 2025 Tramigo.AI. All rights reserved.</p>
       </footer>
     </div>
-  )
+  );
 }
 
 export default App
