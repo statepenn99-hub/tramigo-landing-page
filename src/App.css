@@ -113,7 +113,14 @@ body, html {
   margin: 40px 0;
 }
 
-.mission-box {
+.elephant-image {
+  width: 100%; /* Force it to fill the width of the container */
+  height: auto; /* Maintain aspect ratio so it doesn't stretch */
+  display: block; /* Removes tiny gap underneath images */
+  border-radius: 12px; /* Rounded corners for a modern look */
+}
+
+.mission-box, .howto-box, .build-box {
   background: #99aa8c;
   padding: 30px 20px; /* Compact padding for mobile */
   border-radius: 12px;
@@ -122,13 +129,13 @@ body, html {
   box-sizing: border-box;
 }
 
-.mission-box h2 {
+.mission-box h2, .howto-box h2, .build-box h2 {
   margin-top: 0;
   color: #333;
   font-size: 1.5rem;
 }
 
-.mission-text {
+.mission-text, .howto-text, .build-text {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #333;
@@ -286,11 +293,11 @@ body, html {
     height: 160px; /* Larger logo */
   }
 
-  .mission-box, .contact-box, .login-box {
+  .mission-box, .contact-box, .login-box, .howto-box, .build-box {
     padding: 60px; /* Big spacious box */
   }
 
-  .mission-text, .contact-text {
+  .mission-text, .contact-text, .howto-text, .build-text {
     font-size: 1.35rem; /* Larger text for reading ease */
   }
 

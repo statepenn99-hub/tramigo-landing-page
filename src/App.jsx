@@ -51,7 +51,7 @@ function LandingPage() {
       <main className="main-content">
         {/* Mission Section */}
         <section className="mission-box">
-          <h2>Our Mission</h2>
+          <h2>Everyone deserves to work</h2>
           <p className="mission-text">
             Our mission is to facilitate inclusive, community-based employment for 
             individuals with intellectual disabilities. By leveraging adaptive 
@@ -68,6 +68,41 @@ function LandingPage() {
              src="/infographic.png" 
              alt="Infographic explaining employment stats for IIDs" 
              className="infographic-image"
+           />
+        </section>
+
+        {/* How Section */}
+        <section className="howto-box">
+          <h2>Evidence-based and fun</h2>
+          <p className="howto-text">
+            Master the skills for jobs and independent living through an AI-powered 
+            platform that turns daily tasks into research-backed games and meaningful 
+            milestones.
+          </p>
+        </section>
+
+        <section className="howto-img">
+           <img 
+             src="/task-elephant.png" 
+             alt="Elephant using the app while working" 
+             className="elephant-image"
+           />
+        </section>
+
+        {/* Build Section */}
+        <section className="build-box">
+          <h2>Build your own experiences</h2>
+          <p className="build-text">
+            Create custom games, break down complex tasks into easy to follow steps,
+            and customize the learning experience, all with a just a few clicks. 
+          </p>
+        </section>
+
+        <section className="build-img">
+           <img 
+             src="/build-elephant.png" 
+             alt="Elephant using the app while working" 
+             className="elephant-image"
            />
         </section>
 
