@@ -95,10 +95,10 @@ body, html {
 }
 
 .logo {
-  height: 90px; /* Slightly smaller for mobile */
-  width: auto;
-  margin-bottom: 15px;
-  border-radius: 12px;
+  width: 100%; /* Force it to fill the width of the container */
+  height: auto; /* Maintain aspect ratio so it doesn't stretch */
+  display: block; /* Removes tiny gap underneath images */
+  border-radius: 12px; /* Rounded corners for a modern look */
 }
 
 /* Box Styling */
@@ -289,10 +289,6 @@ body, html {
     padding: 40px; /* More breathing room */
   }
 
-  .logo {
-    height: 160px; /* Larger logo */
-  }
-
   .mission-box, .contact-box, .login-box, .howto-box, .build-box {
     padding: 60px; /* Big spacious box */
   }
@@ -300,5 +296,4 @@ body, html {
   .mission-text, .contact-text, .howto-text, .build-text {
     font-size: 1.35rem; /* Larger text for reading ease */
   }
-
 }
