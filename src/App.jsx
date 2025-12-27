@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import Login from './Login';
+import Research from './Research';
 import './App.css'
 
 function App() {
-  // State to track current page: 'landing' or 'login'
+  // State to track current page
   const [currentPage, setCurrentPage] = useState('landing');
 
   return (
@@ -18,6 +19,15 @@ function App() {
           <img src="/tramigo-navbar.png" alt="Logo" className="nav-logo" />
           <span className="nav-title">My Org</span>
         </div>
+
+        <div className="nav-links">
+          {/* Research Link */}
+          <button 
+            className={`nav-link ${currentPage === 'research' ? 'active' : ''}`}
+            onClick={() => setCurrentPage('research')}
+          >
+            Research
+          </button>
         
         {/* Only show Sign Up button if we are NOT on the login page */}
         {currentPage !== 'login' && (
@@ -28,14 +38,13 @@ function App() {
             Sign Up
           </button>
         )}
+        </div>
       </nav>
 
       {/* DYNAMIC CONTENT AREA */}
-      {currentPage === 'landing' ? (
-        <LandingPage />
-      ) : (
-        <Login onBack={() => setCurrentPage('landing')} />
-      )}
+      {currentPage === 'landing' && <LandingPage />}
+      {currentPage === 'login' && <Login onBack={() => setCurrentPage('landing')} />}
+      {currentPage === 'research' && <Research />}
     </div>
   )
 }
