@@ -121,16 +121,16 @@ function LandingPage() {
           <div className="contact-links">
             <a href="mailto:contact@tramigo.ai">Email Us</a>
             <span>•</span>
-            <a href="https://bsky.app/profile/tramigo" target="_blank" rel="noreferrer">Bluesky</a>
+            <a href="https://bsky.app/profile/tramigo-ai.bsky.social" target="_blank" rel="noreferrer">Bluesky</a>
             <span>•</span>
-            <a href="https://instagram.com/tramigo" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://instagram.com/tramigoai" target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </section>
       </main>
 
       {/* Footer */}
       <footer className="footer">
-        <p className="copyright">© 2025 Tramigo.AI. All rights reserved.</p>
+        <p className="copyright">© 2026 Tramigo.AI. All rights reserved.</p>
       </footer>
     </div>
   );
