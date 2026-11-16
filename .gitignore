@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Security: Environment variables & local agent configs
+.env
+.env.*
+!.env.example
+.vercel
+.agents/
